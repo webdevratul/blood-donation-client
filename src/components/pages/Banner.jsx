@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../assets/css/Banner.css";
 import banner from "../../assets/img/banner.jpg";
 import { MdArrowRight } from "react-icons/md";
@@ -34,8 +35,12 @@ const Banner = () => {
                         </div>
                     </div>
                     <div className="py-2 -ml-8 md:-ml-0 flex flex-col md:flex-row gap-4">
-                        <button className="bg-[#EA062B] px-6 py-3 text-xl text-white font-semibold">join as a donner</button>
-                        <button className="bg-[#111111] px-6 py-3 text-xl text-white font-semibold">Search donner</button>
+                        <Link to="/register">
+                            <button className="bg-[#EA062B] px-6 py-3 text-xl text-white uppercase font-serif">join as a donner</button>
+                        </Link>
+                        <Link to="/search">
+                            <button className="bg-[#111111]  px-6 py-3 text-xl text-white uppercase font-serif">Search donner</button>
+                        </Link>
                     </div>
                 </div>
             </div>

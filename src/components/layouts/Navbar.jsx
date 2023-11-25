@@ -46,11 +46,13 @@ const Navbar = () => {
                 <div className="w-[100%] xl:w-[45%] bg-[#EA062B] flex justify-center items-center py-6">
                     <h2 className="text-4xl font-extrabold text-white uppercase"> <span className="text-[#111111]">Donate</span> Blood</h2>
                 </div>
-                <div className="w-[100%] xl:w-[60%] flex justify-around items-center text-xl font-semibold py-6">
+                <div className="w-[100%] xl:w-[60%] flex justify-around items-center  font-semibold py-6">
                     <ul className="flex flex-col md:flex-row gap-1 text-[17.5px] uppercase">
                         {navLink}
                     </ul>
-                    <button className="bg-[#111111] px-6 py-2 text-white uppercase">Login</button>
+                    <Link to="/login">
+                        <button className="bg-[#111111] hover:bg-[#EA062B] px-6 py-2 text-white font-serif uppercase transition">Login</button>
+                    </Link>
                 </div>
             </div>
         </div>

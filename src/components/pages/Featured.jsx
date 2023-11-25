@@ -13,7 +13,7 @@ const Featured = () => {
                     <div className="bg-white shadow-2xl relative cursor-pointer">
                         <div className="p-4">
                             <img src={featured3} alt="" />
-                            <h4 className="pt-24 text-2xl font-bold">Become a donate</h4>
+                            <h4 className="pt-24 text-2xl font-bold">Blood Donation Campaign</h4>
                             <p className="py-6">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give</p>
                         </div>
                         <img className="bg-[#EA062B] absolute hidden xl:block top-[35%] p-6 left-[38%]" src={d2} alt="" />
@@ -23,7 +23,7 @@ const Featured = () => {
                     <div className="bg-white shadow-2xl relative cursor-pointer">
                         <div className="p-4">
                             <img src={featured1} alt="" />
-                            <h4 className="pt-24 text-2xl font-bold">Why give blood?</h4>
+                            <h4 className="pt-24 text-2xl font-bold">Health Check Facilities</h4>
                             <p className="py-6">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give</p>
                         </div>
                         <img className="bg-[#EA062B] absolute hidden xl:block top-[35%] px-8 py-4 left-[38%]" src={d1} alt="" />
@@ -33,7 +33,7 @@ const Featured = () => {
                     <div className="bg-white shadow-2xl relative cursor-pointer">
                         <div className="p-4">
                             <img src={featured3} alt="" />
-                            <h4 className="pt-24 text-2xl font-bold">How Denations Help?</h4>
+                            <h4 className="pt-24 text-2xl font-bold">Blood Info Provide</h4>
                             <p className="py-6">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give</p>
                         </div>
                         <img className="bg-[#EA062B] absolute hidden xl:block top-[35%] p-6 left-[38%]" src={d3} alt="" />
