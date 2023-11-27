@@ -10,6 +10,10 @@ import Register from "../pages/Register";
 import DashboardRoot from "../dashboardRoot/DashboardRoot";
 import CreateDonationRequest from "../dashboard/CreateDonationRequest";
 import HomeDashboard from "../dashboardRoot/HomeDashboard";
+import MyDonationRequest from "../dashboard/MyDonationRequest";
+import PrivateRoutes from "./PrivateRoutes";
+import AllUsers from "../dashboard/AllUsers";
+import AllDonationRequest from "../dashboard/AllDonationRequest";
 
 
 
@@ -38,20 +42,31 @@ export const router = createBrowserRouter([
                 path: "/login",
                 element: <Login></Login>
             },
-
         ]
     },
     {
         path: "/dashboard",
-        element: <DashboardRoot></DashboardRoot>,
+        element: <PrivateRoutes><DashboardRoot></DashboardRoot></PrivateRoutes>,
         children: [
             {
                 path: "/dashboard/createDonationRequest",
-                element: <CreateDonationRequest></CreateDonationRequest>
+                element: <PrivateRoutes><CreateDonationRequest></CreateDonationRequest></PrivateRoutes>
             },
             {
                 path: "/dashboard",
-                element: <HomeDashboard></HomeDashboard>
+                element: <PrivateRoutes><HomeDashboard></HomeDashboard></PrivateRoutes>
+            },
+            {
+                path: "/dashboard/myDonationRequest",
+                element: <PrivateRoutes><MyDonationRequest></MyDonationRequest></PrivateRoutes>
+            },
+            {
+                path: "/dashboard/allUsers",
+                element: <PrivateRoutes><AllUsers></AllUsers></PrivateRoutes>
+            },
+            {
+                path: "/dashboard/myDonationAll",
+                element: <PrivateRoutes><AllDonationRequest></AllDonationRequest></PrivateRoutes>
             },
         ]
     }

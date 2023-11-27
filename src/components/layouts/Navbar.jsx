@@ -25,8 +25,11 @@ const Navbar = () => {
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/featured">Featured</Link></li>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/contact">Contact</Link></li>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/">Search</Link></li>
-        <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/dashboard">dashboard</Link></li>
-        
+        {
+            user &&
+            <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/dashboard">dashboard</Link></li>
+        }
+
     </>
 
     return (

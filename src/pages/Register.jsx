@@ -14,7 +14,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 const Register = () => {
 
-    const { createuser, profileUpdate } = useContext(authContext);
+    const { createuser, profileUpdate, setLoading } = useContext(authContext);
 
     const [registerError, setRegisterError] = useState("");
     const axiosPublic = UseAxiosPublic();
@@ -100,6 +100,7 @@ const Register = () => {
                                     navigate("/");
 
                                     profileUpdate(name, image);
+                                    setLoading(false);
 
                                 }
                             })

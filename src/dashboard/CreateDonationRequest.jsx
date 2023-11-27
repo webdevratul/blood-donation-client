@@ -41,10 +41,10 @@ const CreateDonationRequest = () => {
         const status = "Pending";
 
         const requestData = {
-            name: name,
-            email: email,
+            requesterName: name,
+            requesterEmail: email,
+            recipientDonnerEmail: data.recipientDonnerEmail,
             recipientName: data.recipientName,
-            recipientEmail: data.recipientEmail,
             district: data.district,
             upazila: data.upazila,
             hospitalName: data.hospitalName,
@@ -104,6 +104,18 @@ const CreateDonationRequest = () => {
                         </div>
                     </div>
                     <div className="flex flex-col lg:flex-row gap-6">
+                        <div className="form-control w-full my-6" title="Collect from the Search Page">
+                            <label className="label">
+                                <span className="label-text" title="Collect from the Search Page">Recipient Donner E-mail*</span>
+                            </label>
+                            <input title="Collect from the Search Page"
+                                type="email"
+                                placeholder="Recipient Donner E-mail"
+                                className="input input-bordered w-full"
+                                {...register("recipientDonnerEmail", { required: true })}
+                                required
+                            />
+                        </div>
                         <div className="form-control w-full my-6">
                             <label className="label">
                                 <span className="label-text">Recipient Name*</span>
@@ -113,18 +125,6 @@ const CreateDonationRequest = () => {
                                 placeholder="Recipient Name"
                                 className="input input-bordered w-full"
                                 {...register("recipientName", { required: true })}
-                                required
-                            />
-                        </div>
-                        <div className="form-control w-full my-6">
-                            <label className="label">
-                                <span className="label-text">Recipient E-mail*</span>
-                            </label>
-                            <input
-                                type="text"
-                                placeholder="Recipient E-mail"
-                                className="input input-bordered w-full"
-                                {...register("recipientEmail", { required: true })}
                                 required
                             />
                         </div>
