@@ -7,6 +7,11 @@ import Featured from "../components/pages/Featured";
 import Contact from "../components/pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import DashboardRoot from "../dashboardRoot/DashboardRoot";
+import CreateDonationRequest from "../dashboard/CreateDonationRequest";
+import HomeDashboard from "../dashboardRoot/HomeDashboard";
+
+
 
 export const router = createBrowserRouter([
     {
@@ -33,7 +38,21 @@ export const router = createBrowserRouter([
                 path: "/login",
                 element: <Login></Login>
             },
-            
+
+        ]
+    },
+    {
+        path: "/dashboard",
+        element: <DashboardRoot></DashboardRoot>,
+        children: [
+            {
+                path: "/dashboard/createDonationRequest",
+                element: <CreateDonationRequest></CreateDonationRequest>
+            },
+            {
+                path: "/dashboard",
+                element: <HomeDashboard></HomeDashboard>
+            },
         ]
     }
 ]);

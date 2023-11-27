@@ -10,7 +10,7 @@ const Featured = () => {
             <div className="text-center py-16 w-[90%] md:w-[60%] mx-auto">
                 <h2 className="text-5xl font-extrabold py-8">Our Featured</h2>
                 <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-x-8 gap-y-4 py-10">
-                    <div className="bg-white shadow-2xl relative cursor-pointer">
+                    <div className="bg-white shadow-2xl relative cursor-pointer text-justify">
                         <div className="p-4">
                             <img src={featured3} alt="" />
                             <h4 className="pt-24 text-2xl font-bold">Blood Donation Campaign</h4>
@@ -20,7 +20,7 @@ const Featured = () => {
                         <button className="w-full bg-[#EA062B] py-4 text-xl text-white font-semibold">Read More</button>
                     </div>
                     
-                    <div className="bg-white shadow-2xl relative cursor-pointer">
+                    <div className="bg-white shadow-2xl relative cursor-pointer text-justify">
                         <div className="p-4">
                             <img src={featured1} alt="" />
                             <h4 className="pt-24 text-2xl font-bold">Health Check Facilities</h4>
@@ -30,7 +30,7 @@ const Featured = () => {
                         <button className="w-full hover:bg-[#] bg-[#EA062B] py-4 text-xl text-white font-semibold">Read More</button>
                     </div>
 
-                    <div className="bg-white shadow-2xl relative cursor-pointer">
+                    <div className="bg-white shadow-2xl relative cursor-pointer text-justify">
                         <div className="p-4">
                             <img src={featured3} alt="" />
                             <h4 className="pt-24 text-2xl font-bold">Blood Info Provide</h4>
