@@ -46,6 +46,7 @@ const Register = () => {
         if (data) {
             setRegisterLoader(false);
         }
+        
         const imageFile = { image: data.image[0] };
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
             headers: {
@@ -69,8 +70,8 @@ const Register = () => {
                 status: status
             };
 
-            const menuRes = await axiosSecure.post("/user", RegisterData);
-            if (menuRes.data.insertedId) {
+            const registerRes = await axiosSecure.post("/user", RegisterData);
+            if (registerRes.data.insertedId) {
 
                 const name = data.name;
                 const image = res.data.data.display_url;

@@ -89,12 +89,12 @@ const AllUsers = () => {
 
     return (
         <div className="w-[100%] md:w-[50%] lg:w-[70%] 2xl:w-[82%] bg-[#E3E3E3] mx-auto pb-12">
-            <h2 className="text-center  mt-28 mb-10 text-3xl lg:text-4xl font-extrabold">All Of Your Users</h2>
+            <h2 className="text-center  mt-28 mb-10 text-3xl lg:text-4xl font-extrabold text-gray-500">All Of Your Users</h2>
             <div className="overflow-x-auto">
                 <div className="w-[70%] mx-auto">
                     <div className="overflow-x-auto">
                         <table className="table">
-                            <thead className="text-[17px] text-black">
+                            <thead className="text-[17px]">
                                 <tr>
                                     <th>#</th>
                                     <th>Avatar</th>

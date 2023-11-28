@@ -21,7 +21,7 @@ const Navbar = () => {
     const navLink = <>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/">Home</Link></li>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/">Donation Request</Link></li>
-        <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/">Blog</Link></li>
+        <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/blog">Blog</Link></li>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/featured">Featured</Link></li>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/contact">Contact</Link></li>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/">Search</Link></li>

@@ -10,6 +10,7 @@ import {
 import app from "../firebaseConfig/firebaseConfig";
 import { createContext, useEffect, useState } from "react";
 
+
 const auth = getAuth(app);
 export const authContext = createContext(null);
 
@@ -17,6 +18,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState("");
     const [loading, setLoading] = useState(true);
+    
 
     const createuser = (email, password) => {
         setLoading(true);
@@ -45,6 +47,8 @@ const AuthProvider = ({ children }) => {
             displayName: name, photoURL: image
         })
     }
+
+   
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {

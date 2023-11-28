@@ -74,7 +74,7 @@ const CreateDonationRequest = () => {
 
     return (
         <div className="bg-[#E3E3E3] h-auto w-[100%] md:w-[50%] lg:w-[75%] xl:w-[70%] 2xl:w-[82%]">
-            <h2 className="text-2xl lgtext-3xl xl:text-4xl 2xl:text-5xl font-extrabold pt-16 pb-4  text-center">Create Donation Request</h2>
+            <h2 className="text-2xl lgtext-3xl xl:text-4xl 2xl:text-5xl font-extrabold pt-16 pb-4  text-center text-gray-500">Create Donation Request</h2>
             <div className="w-[80%] lg:w-[60%] mx-auto">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="flex flex-col lg:flex-row gap-6">

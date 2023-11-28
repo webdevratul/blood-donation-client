@@ -14,6 +14,12 @@ import MyDonationRequest from "../dashboard/MyDonationRequest";
 import PrivateRoutes from "./PrivateRoutes";
 import AllUsers from "../dashboard/AllUsers";
 import AllDonationRequest from "../dashboard/AllDonationRequest";
+import UpdateRequest from "../dashboard/UpdateRequest";
+import ContentManagement from "../dashboard/ContentManagement";
+import AddBlog from "../dashboard/AddBlog";
+import Profile from "../dashboard/Profile";
+import Blog from "../pages/Blog";
+
 
 
 
@@ -42,6 +48,10 @@ export const router = createBrowserRouter([
                 path: "/login",
                 element: <Login></Login>
             },
+            {
+                path: "/blog",
+                element: <Blog></Blog>
+            },
         ]
     },
     {
@@ -68,6 +78,24 @@ export const router = createBrowserRouter([
                 path: "/dashboard/myDonationAll",
                 element: <PrivateRoutes><AllDonationRequest></AllDonationRequest></PrivateRoutes>
             },
+            {
+                path: "/dashboard/updateRequest/:id",
+                element: <PrivateRoutes><UpdateRequest></UpdateRequest></PrivateRoutes>,
+                loader: ({ params }) => fetch(`http://localhost:200/donationRequest/${params.id}`)
+            },
+            {
+                path: "/dashboard/contentManagement",
+                element: <PrivateRoutes><ContentManagement></ContentManagement></PrivateRoutes>
+            },
+            {
+                path: "/dashboard/contentManagement/addBlog",
+                element: <PrivateRoutes><AddBlog></AddBlog></PrivateRoutes>
+            },
+            {
+                path: "/dashboard/profile",
+                element: <PrivateRoutes><Profile></Profile></PrivateRoutes>
+            },
+            
         ]
     }
 ]);
