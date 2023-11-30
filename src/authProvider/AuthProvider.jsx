@@ -9,6 +9,7 @@ import {
 
 import app from "../firebaseConfig/firebaseConfig";
 import { createContext, useEffect, useState } from "react";
+import UseAxiosPublic from "../hooks/UseAxiosPublic";
 
 
 const auth = getAuth(app);
@@ -18,7 +19,8 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState("");
     const [loading, setLoading] = useState(true);
-    
+    const axiosPublic = UseAxiosPublic();
+
 
     const createuser = (email, password) => {
         setLoading(true);
@@ -48,7 +50,7 @@ const AuthProvider = ({ children }) => {
         })
     }
 
-   
+
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
@@ -59,7 +61,7 @@ const AuthProvider = ({ children }) => {
         return () => {
             unSubscribe();
         }
-    }, []);
+    }, [axiosPublic]);
 
     const Info = { createuser, signIn, user, logOut, loading, setLoading, googleSignIn, profileUpdate };
     return (

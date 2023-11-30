@@ -182,7 +182,7 @@ const AddBlog = () => {
                                     <img className='h-[200px] rounded-t-xl object-cover' src={blog?.image} alt="Movie" />
                                     <div className="card-body">
                                         <h2 className="card-title text-[25px] text-gray-500">{blog.title}</h2>
-                                        <p className='text-gray-500'>{blog?.content}</p>
+                                        <p className='text-gray-500 pt-8'>{blog?.content}</p>
                                         {
                                             isAdmin &&
                                             <div>
@@ -200,8 +200,6 @@ const AddBlog = () => {
                             }
                         </div> : <h2 className='text-center font-semibold text-gray-500 text-4xl'>Not Yet Post</h2>
                 }
-
-
             </div>
 
         </div>

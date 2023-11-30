@@ -19,6 +19,11 @@ import ContentManagement from "../dashboard/ContentManagement";
 import AddBlog from "../dashboard/AddBlog";
 import Profile from "../dashboard/Profile";
 import Blog from "../pages/Blog";
+import BloodDonationRequest from "../pages/BloodDonationRequest";
+import ViewDetails from "../pages/ViewDetails";
+import Search from "../pages/Search";
+import DonationDetails from "../pages/DonationDetails";
+import Funding from "../pages/Funding";
 
 
 
@@ -52,6 +57,27 @@ export const router = createBrowserRouter([
                 path: "/blog",
                 element: <Blog></Blog>
             },
+            {
+                path: "/bloodDonationRequest",
+                element: <BloodDonationRequest></BloodDonationRequest>
+            },
+            {
+                path: "/search",
+                element: <Search></Search>
+            },
+            {
+                path: "/funding",
+                element: <PrivateRoutes><Funding></Funding></PrivateRoutes>
+            },
+            {
+                path: "/bloodDonationRequest/viewDetails/:id",
+                element: <PrivateRoutes><ViewDetails></ViewDetails></PrivateRoutes>,
+                loader: ({ params }) => fetch(`https://blood-donation-server-rose.vercel.app/donationRequest/${params.id}`)
+            },
+            {
+                path: "/details",
+                element: <PrivateRoutes><DonationDetails></DonationDetails></PrivateRoutes>
+            },
         ]
     },
     {
@@ -81,7 +107,7 @@ export const router = createBrowserRouter([
             {
                 path: "/dashboard/updateRequest/:id",
                 element: <PrivateRoutes><UpdateRequest></UpdateRequest></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:200/donationRequest/${params.id}`)
+                loader: ({ params }) => fetch(`https://blood-donation-server-rose.vercel.app/donationRequest/${params.id}`)
             },
             {
                 path: "/dashboard/contentManagement",
@@ -95,7 +121,7 @@ export const router = createBrowserRouter([
                 path: "/dashboard/profile",
                 element: <PrivateRoutes><Profile></Profile></PrivateRoutes>
             },
-            
+
         ]
     }
 ]);

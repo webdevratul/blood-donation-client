@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPublic = axios.create({
-    baseURL: 'http://localhost:200',
+    baseURL: 'https://blood-donation-server-rose.vercel.app',
 });
 
 const UseAxiosPublic = () => {

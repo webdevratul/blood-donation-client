@@ -63,7 +63,7 @@ const Dashboard = () => {
                             </div>
 
                             <div>
-                                <Link className="flex items-center gap-3 pl-8" to="/">
+                                <Link className="flex items-center gap-3 pl-8" to="/search">
                                     <FaSearchLocation></FaSearchLocation>
                                     <span className="hover:text-[#EA062B] transition">Search</span>
                                 </Link>
@@ -151,7 +151,7 @@ const Dashboard = () => {
                             </div>
 
                             <div>
-                                <Link className="flex items-center gap-3 pl-8" to="/">
+                                <Link className="flex items-center gap-3 pl-8" to="/search">
                                     <FaSearchLocation></FaSearchLocation>
                                     <span className="hover:text-[#EA062B] transition">Search</span>
                                 </Link>

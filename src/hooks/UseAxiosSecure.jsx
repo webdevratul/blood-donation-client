@@ -1,7 +1,8 @@
 import axios from "axios";
 
+
 const axiosSecure = axios.create({
-    baseURL: "http://localhost:200"
+    baseURL: "https://blood-donation-server-rose.vercel.app"
 });
 
 const UseAxiosSecure = () => {

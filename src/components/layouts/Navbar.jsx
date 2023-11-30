@@ -20,16 +20,20 @@ const Navbar = () => {
 
     const navLink = <>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/">Home</Link></li>
-        <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/">Donation Request</Link></li>
+        <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/bloodDonationRequest">Donation Request</Link></li>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/blog">Blog</Link></li>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/featured">Featured</Link></li>
         <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/contact">Contact</Link></li>
-        <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/">Search</Link></li>
+
         {
             user &&
-            <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/dashboard">dashboard</Link></li>
-        }
+            <>
+                <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/funding">Funding</Link></li>
+                <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/details">Details</Link></li>
+                <li><Link className="mx-1 hover:text-[#EA062B] transition" to="/dashboard">dashboard</Link></li>
+            </>
 
+        }
     </>
 
     return (

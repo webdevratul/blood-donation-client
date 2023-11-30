@@ -10,18 +10,25 @@ import UseAdmin from "../dashboard/UseAdmin";
 import Swal from "sweetalert2";
 import UseVolunteer from "../dashboard/UseVolunteer";
 
+
 const HomeDashboard = () => {
 
     // Admin Related Coding
     const [isAdmin] = UseAdmin();
     const [isVolunteer] = UseVolunteer();
-    
+    const axiosSecure = UseAxiosSecure();
 
 
+    const { data: allUsers = [] } = useQuery({
+        queryKey: ["users"],
+        queryFn: async () => {
+            const res = await axiosSecure.get("/users");
+            return res.data;
+        }
+    });
 
     // Donner related coding
     const { user } = useContext(authContext);
-    const axiosSecure = UseAxiosSecure();
     const { data: donationRequest = [], refetch } = useQuery({
         queryKey: ["donationRequest"],
         queryFn: async () => {
@@ -29,10 +36,12 @@ const HomeDashboard = () => {
             return res.data;
         }
     });
+
     const navigate = useNavigate();
     const handleAllDonation = () => {
         navigate("/dashboard/myDonationRequest")
     }
+
     let founddonationRequest = donationRequest.filter((request) => request.recipientDonnerEmail === user?.email);
 
     const handleAccept = request => {
@@ -98,7 +107,6 @@ const HomeDashboard = () => {
     }
     return (
         <>
-
             {
                 isAdmin === true || isVolunteer === true ?
                     <div className="w-[100%] md:w-[50%] lg:w-[70%] 2xl:w-[82%] bg-[#E3E3E3] mx-auto pb-12">
@@ -109,7 +117,7 @@ const HomeDashboard = () => {
                                     <div className="stat">
                                         <div className="stat-title text-2xl font-bold">Total Users</div>
                                         <div className="flex gap-x-10">
-                                            <div className="stat-value text-[#FF00D3] font-extrabold font-sans text-5xl">89,400</div>
+                                            <div className="stat-value text-[#FF00D3] font-extrabold font-sans text-5xl">{allUsers.length}</div>
                                             <FaUsersViewfinder className="text-5xl text-[#FF00D3]"></FaUsersViewfinder>
                                         </div>
                                         <div className="stat-desc text-[16px]">Here all users counted</div>
@@ -129,7 +137,7 @@ const HomeDashboard = () => {
                                     <div className="stat">
                                         <div className="stat-title text-2xl font-bold">Total Donation Request</div>
                                         <div className="flex gap-x-10">
-                                            <div className="stat-value text-[#FF00D3] font-extrabold font-sans text-5xl">89,400</div>
+                                            <div className="stat-value text-[#FF00D3] font-extrabold font-sans text-5xl">{donationRequest.length}</div>
                                             <BsChatTextFill className="text-5xl text-[#FF00D3]"></BsChatTextFill>
                                         </div>
                                         <div className="stat-desc text-[16px]">Here all users counted</div>
@@ -202,7 +210,6 @@ const HomeDashboard = () => {
                         </div>
                     </div>
             }
-
 
         </>
 

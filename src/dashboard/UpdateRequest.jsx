@@ -44,7 +44,7 @@ const UpdateRequest = () => {
         const upDateDonationRequest = { requesterName, requesterEmail, recipientDonnerEmail, recipientName, district, upazila, hospitalName, address, requestMessage, date, time }
 
         
-        fetch(`http://localhost:200/updateDonationRequest/${donationRequest?._id}`, {
+        fetch(`https://blood-donation-server-rose.vercel.app/updateDonationRequest/${donationRequest?._id}`, {
                 method: "PUT",
                 headers: {
                     "content-type": "application/json"
